@@ -63,3 +63,34 @@ $router->post('category/store', 'Category::store');
 $router->get('category/edit/{id}', 'Category::edit');
 $router->post('category/update/{id}', 'Category::update');
 $router->post('category/delete/{id}', 'Category::delete');
+
+/*
+| -------------------------------------------------------------------
+| REST API ROUTES FOR REACT FRONTEND
+| -------------------------------------------------------------------
+*/
+// Auth API
+$router->post('api/auth/login', 'Api_auth::login');
+$router->post('api/auth/logout', 'Api_auth::logout');
+$router->get('api/auth/me', 'Api_auth::me');
+
+// Admin Dashboard & Tables API
+$router->get('api/admin/dashboard', 'Api_admin::dashboard');
+$router->get('api/admin/tables', 'Api_admin::tables');
+$router->get('api/admin/tables/{table}', 'Api_admin::table');
+$router->get('api/admin/tables/{table}/options', 'Api_admin::options');
+$router->get('api/admin/tables/{table}/{id}', 'Api_admin::show');
+$router->post('api/admin/tables/{table}', 'Api_admin::store');
+$router->put('api/admin/tables/{table}/{id}', 'Api_admin::update');
+$router->post('api/admin/tables/{table}/update/{id}', 'Api_admin::update');
+$router->delete('api/admin/tables/{table}/{id}', 'Api_admin::delete');
+$router->post('api/admin/tables/{table}/delete/{id}', 'Api_admin::delete');
+
+// Categories API
+$router->get('api/categories', 'Api_category::index');
+$router->get('api/categories/{id}', 'Api_category::show');
+$router->post('api/categories', 'Api_category::store');
+$router->put('api/categories/{id}', 'Api_category::update');
+$router->post('api/categories/update/{id}', 'Api_category::update');
+$router->delete('api/categories/{id}', 'Api_category::delete');
+$router->post('api/categories/delete/{id}', 'Api_category::delete');
